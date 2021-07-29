@@ -1,4 +1,5 @@
 # WhoAreMyTeammates
+<<<<<<< HEAD
 <h1>Intro</h1>
 A plugin for SCP: SL that shows the SCP Team a list of their teammates on spawn.
 Sends a broadcast out to the SCP Team (all players who are SCPs) at the beginning of the game with a customizable message including a list of SCP numbers who are ingame.
@@ -15,3 +16,4 @@ You can try other versions but do not blame me if it doesn't work :)
 | WamtBCTime  | Integer  | 10  |
 | IsBCDelayEnabled  | Boolean  | true  |
 | WamtBCDelay  | Integer  | 20  |
+
