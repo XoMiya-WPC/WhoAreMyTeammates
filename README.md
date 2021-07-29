@@ -16,3 +16,7 @@ You can try other versions but do not blame me if it doesn't work :)
 | IsBCDelayEnabled  | Boolean  | true  |
 | WamtBCDelay  | Integer  | 20  |
 
+<h1>Info & Contact</h1>
+This plugin was requested on the Exiled Discord Server.
+
+For help or issues Contact me on Discord @ XoMiya#0113 or join my discord (https://discord.gg/rVX49ss)
