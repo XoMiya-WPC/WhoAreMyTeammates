@@ -16,6 +16,9 @@ namespace WhoAreMyTeammates.Handlers
         [Description("Broadcast Time in Seconds - Accepts whole numbers >0 (Def: 10")]
         public ushort WamtBCTime { get; set; } = 10;
 
+        [Description("Is the Delay Function Enabled? Accepts Bool (Def: true)")]
+        public bool IsBCDelayEnabled { get; set; } = true;
+
         [Description(
             "The Delay before the broadcast will be issued. Please ammend based on your servers use case incase you have a broadcast from another plugin. Accepts integers >0 (Def: 20)")]
         public int WamtBCDelay { get; set; } = 20;

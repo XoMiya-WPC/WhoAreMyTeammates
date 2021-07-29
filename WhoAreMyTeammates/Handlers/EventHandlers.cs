@@ -32,6 +32,7 @@ namespace WhoAreMyTeammates.Handlers
             {
                 scpNames.Add(scp.Role.ToString());
             }
+
             //Adds a comma before each scp role
             var scpinfo = string.Join(", ", scpNames);
             //Removes Scp from the role name
@@ -51,18 +52,29 @@ namespace WhoAreMyTeammates.Handlers
                 message = message.Replace("93989", "939-89");
             }
 
-            //Checks if SCP swap is installed and if so will apply a delay
-            if (Exiled.Loader.Loader.Plugins.Any(p => p.Name == "ScpSwap" && p.Config.IsEnabled))
+            if (plugin.Config.IsBCDelayEnabled == true)
             {
-                ///Adds Delay into the broadcat time
-                Timing.CallDelayed(plugin.Config.WamtBCDelay, () =>
+                //Checks if SCP swap is installed and if so will apply a delay
+                if (Exiled.Loader.Loader.Plugins.Any(p => p.Name == "ScpSwap" && p.Config.IsEnabled))
                 {
-                    foreach (var scp in scps)///Sends Broadcast to every player in the list of "scps"
+                    ///Adds Delay into the broadcat time
+                    Timing.CallDelayed(plugin.Config.WamtBCDelay, () =>
+                    {
+                        foreach (var scp in scps) ///Sends Broadcast to every player in the list of "scps"
+                        {
+                            scp.Broadcast(plugin.Config.WamtBCTime, message);
+                            Log.Debug($"Successfully sent bc to players. The following SCPs are in game: {scpinfos}.");
+                        }
+                    });
+                }
+                else
+                {
+                    foreach (var scp in scps)
                     {
                         scp.Broadcast(plugin.Config.WamtBCTime, message);
                         Log.Debug($"Successfully sent bc to players. The following SCPs are in game: {scpinfos}.");
                     }
-                });
+                }
             }
             else
             {
