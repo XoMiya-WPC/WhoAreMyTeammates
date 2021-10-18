@@ -12,7 +12,7 @@ namespace WhoAreMyTeammates
         public override string Name { get; } = "WhoAreMyTeamates?";
         public override string Author { get; } = "XoMiya-WPC";
         public override string Prefix { get; } = "Who_Are_My_Teamates";
-        public override Version Version { get; } = new Version("1.0.0");
+        public override Version Version { get; } = new Version("2.0.0");
         public override PluginPriority Priority { get; } = PluginPriority.Low;
         private EventHandlers server;
         private EventHandlers player;

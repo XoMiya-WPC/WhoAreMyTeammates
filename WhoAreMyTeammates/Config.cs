@@ -1,12 +1,15 @@
 ﻿using System.ComponentModel;
 using Exiled.API.Interfaces;
 
-namespace WhoAreMyTeammates.Handlers
+namespace WhoAreMyTeammates
 {
     public sealed class Config : IConfig
     {
         [Description("Is the plugin Enabled? - Accepts Bool (Def: true)")]
         public bool IsEnabled { get; set; } = true;
+
+        [Description("Is Debugging Enabled? - Accepts Bool (Def: false)")]
+        public bool EnableDebug { get; set; } = false;
 
         [Description(
             "The Broadcast message that will alert the SCP Team to their teamates. Use {0} for the list of SCPs. (Custom Colours not accepted)")]
@@ -22,6 +25,8 @@ namespace WhoAreMyTeammates.Handlers
         [Description(
             "The Delay before the broadcast will be issued. Please ammend based on your servers use case incase you have a broadcast from another plugin. Accepts integers >0 (Def: 20)")]
         public int WamtBCDelay { get; set; } = 20;
+        [Description("Broadcast to send if only one SCP is present. Accepts String")]
+        public string SingleM { get; set; } = "<color=red>Attention - You are the <b>only</b> SCP This game. Good Luck.</color>";
     }
 
 }
