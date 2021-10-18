@@ -29,11 +29,12 @@ namespace WhoAreMyTeammates.Handlers
             var scpCount = 0;
             //Moves through the list of SCPs and adds their Role to a string
             foreach (var scp in scps)
+            {
                 scpNames.Add(scp.Role.ToString());
                 scpCount = scpCount + 1;
-
-
-            if (scpCount == 1)
+                Log.Debug($"Added one to SCP Count", plugin.Config.EnableDebug);
+            }
+                if (scpCount == 1)
             {
                 if (plugin.Config.IsBCDelayEnabled == true)
                     Timing.CallDelayed(plugin.Config.WamtBCDelay, () =>
