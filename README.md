@@ -1,11 +1,12 @@
 # WhoAreMyTeammates
 <h1>Intro</h1>
-A plugin for SCP: SL that shows the SCP Team a list of their teammates on spawn.
-Sends a broadcast out to the SCP Team (all players who are SCPs) at the beginning of the game with a customizable message including a list of SCP numbers who are ingame.
+A plugin for SCP: SL that shows the specified Team a list of their teammates on spawn.
+Sends a broadcast out to the players on the team containing a list of their fellow players. For SCPs it will show a list of SCP numbers.
 
 <h1>Requirements</h1>
-The latest release of this plugin requires EXILED 3.0.0
-You can try other versions but do not blame me if it doesn't work :)
+
+This plugin requires [EXILED](https://github.com/Exiled-Team/EXILED/releases "Exiled Releases") `3.0.0`
+This plugin **WILL NOT WORK** on previous versions
 <h1>General Config</h1>
 
 | Config  | Type | Def Value |
@@ -14,16 +15,28 @@ You can try other versions but do not blame me if it doesn't work :)
 | EnableDebug  | Boolean  | false  |
 | WamtBCTime  | Integer  | 10  |
 
+* **IsEnabled:** Defines if the plugin will be enabled or not. Only enter `true` or `false`.
+* **EnableDebug:** Defines if the plugin will print extra debugging messages in console. Only enter `true` or `false`.
+* **WamtBCTime:** Global time for all broadcasts. This controls how long all of the broadcasts will be. Accepts `whole numbers`.
+
 <h1>Broadcast Configs</h1>
 
-| Config  | Type | Def Value | Explanation |
-| ------------- | ------------- | ------------- | ------------- |
-| Team | Team | RSC, CHI, CDP, MTF, SCP | Each one represents the team - see below. Pick only one. |
-| Contents  | String  | See Below  | The message that will be seen if you are on this team |
-| AloneConents  | String  | See Below  | The message that will be seen if you are alone on a team |
-| Delay  | Integer  | 3  | Delay in seconds from the round starting for the broadcast |
-| MaxPlayers  | Integer  | -1  | A maximum player count. If the count is exceeded the broadcast will not show. -1 to disable |
-| Enabled  | Boolean  | true  | Wether or not this teams broadcast is enabled |
+| Config  | Type | Def Value |
+| ------------- | ------------- | ------------- |
+| Team | Team | RSC, CHI, CDP, MTF, SCP |
+| Contents  | String  | See Below  |
+| AloneConents  | String  | See Below  |
+| Delay  | Integer  | 3  |
+| MaxPlayers  | Integer  | -1  |
+| Enabled  | Boolean  | true  |
+
+* **Team:** Choose from a list of the Teams: `RSC` - Scientists, `CHI` - Chaos Insurgency, `CDP` - Class D, `MTF` - Facility Guards, `SCP` - SCPs. Each team will define which role see the broadcast.
+* **Contents:** This is the broadcast that will be sent to players in that team if the playercount is greater than 1.
+* **AloneContents:** This is the broadcast that will be sent to players in that team if the playercount is less than 1.
+* **Delay:** The delay in seconds from the round before sending the broadcast.
+* **MaxPlayers:** The maximum number of players before the broadcast will not be sent. This is to prevent spam if you have lots of Class D for example. Set to `-1` to disable the limit.
+* **Enabled:** Defines if this teams broadcast is enabled.
+
 
 <h2>Default Config Generated</h2>
 
