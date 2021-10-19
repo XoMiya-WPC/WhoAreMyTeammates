@@ -65,7 +65,8 @@ Who_Are_My_Teammates:
     alone_contents: <color=green>Attention - You are the <b>only</b> Insurgent this game. Good Luck.</color>
     delay: 6
     max_players: -1
-    enabled: true```
+    enabled: true
+ ```
 
 <h1>Info & Contact</h1>
 This plugin was requested on the Exiled Discord Server.
