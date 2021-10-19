@@ -1,35 +1,37 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Features;
 using System;
+using System.Diagnostics.Tracing;
 using WhoAreMyTeammates.Handlers;
 using Server = Exiled.Events.Handlers.Server;
-using Player = Exiled.Events.Handlers.Player;
 
 namespace WhoAreMyTeammates
 {
     public class WhoAreMyTeammates : Plugin<Config>
     {
         public override string Name { get; } = "WhoAreMyTeamates?";
-        public override string Author { get; } = "XoMiya-WPC";
-        public override string Prefix { get; } = "Who_Are_My_Teamates";
-        public override Version Version { get; } = new Version("2.0.0");
+        public override string Author { get; } = "XoMiya-WPC & TheUltiOne";
+        public override string Prefix { get; } = "Who_Are_My_Teammates";
+        public override Version Version { get; } = new Version("3.0.0");
         public override PluginPriority Priority { get; } = PluginPriority.Low;
-        private EventHandlers server;
-        private EventHandlers player;
+
+        public static WhoAreMyTeammates Instance;
+
+        private EventHandlers events;
 
         public override void OnEnabled()
         {
-            server = new EventHandlers(this);
-            player = new EventHandlers(this);
-            Server.RoundStarted += server.OnRoundStart;
+            events = new EventHandlers();
+            Server.RoundStarted += events.OnRoundStarted;
+
+            Instance = this;
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
-            Server.RoundStarted -= server.OnRoundStart;
-            server = null;
-            player = null;
+            Server.RoundStarted -= events.OnRoundStarted;
+            events = null;
         }
     }
 }
