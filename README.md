@@ -31,8 +31,8 @@ This plugin **WILL NOT WORK** on previous versions
 | Enabled  | Boolean  | true  |
 
 * **Team:** Choose from a list of the Teams: `RSC` - Scientists, `CHI` - Chaos Insurgency, `CDP` - Class D, `MTF` - Facility Guards, `SCP` - SCPs. Each team will define which role see the broadcast.
-* **Contents:** This is the broadcast that will be sent to players in that team if the playercount is greater than 1.
-* **AloneContents:** This is the broadcast that will be sent to players in that team if the playercount is less than 1.
+* **Contents:** This is the broadcast that will be sent to players in that team if the playercount is greater than `1`.
+* **AloneContents:** This is the broadcast that will be sent to players in that team if the playercount is less than `1`.
 * **Delay:** The delay in seconds from the round before sending the broadcast.
 * **MaxPlayers:** The maximum number of players before the broadcast will not be sent. This is to prevent spam if you have lots of Class D for example. Set to `-1` to disable the limit.
 * **Enabled:** Defines if this teams broadcast is enabled.
