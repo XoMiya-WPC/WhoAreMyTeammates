@@ -1,7 +1,5 @@
 # WhoAreMyTeammates?
-![](https://img.shields.io/badge/dynamic/json?logo=github&label=GitHub%20Stars&style=for-the-badge&query=%24.stars&url=https://api.github-star-counter.workers.dev/user/xomiya-wpc)
-
-![](https://img.shields.io/badge/dynamic/json?logo=github&label=GitHub%20Forks&style=for-the-badge&query=%24.forks&url=https://api.github-star-counter.workers.dev/user/xomiya-wpc)
+![](https://img.shields.io/badge/dynamic/json?logo=github&label=GitHub%20Stars&style=for-the-badge&query=%24.stars&url=https://api.github-star-counter.workers.dev/user/xomiya-wpc) ![](https://img.shields.io/badge/dynamic/json?logo=github&label=GitHub%20Downloadss&style=for-the-badge&query=%24.downloads&url=https://api.github-star-counter.workers.dev/user/xomiya-wpc)
 
 <h1>Intro</h1>
 A plugin for SCP: SL that shows the specified Team a list of their teammates on spawn.
