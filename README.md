@@ -1,5 +1,4 @@
 # WhoAreMyTeammates?
- ![visitors](https://visitor-badge.glitch.me/badge?page_id=page.id&left_color=green&right_color=red)
 
 <h1>Intro</h1>
 A plugin for SCP: SL that shows the specified Team a list of their teammates on spawn.
