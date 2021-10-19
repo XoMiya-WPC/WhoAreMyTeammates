@@ -86,6 +86,6 @@ Who_Are_My_Teammates:
 <h1>Info & Contact</h1>
 This plugin was requested on the Exiled Discord Server.
 
-For help or issues Contact me on Discord @ XoMiya#6113 or join my discord (https://discord.gg/DxWXw9jmXn)
+For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/DxWXw9jmXn "XoMiya's Kitchen")
 
 ![img](https://img.shields.io/github/downloads/XoMiya-WPC/WhoAreMyTeammates/total?style=for-the-badge)
