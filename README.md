@@ -26,6 +26,7 @@ You can try other versions but do not blame me if it doesn't work :)
 | Enabled  | Boolean  | true  | Wether or not this teams broadcast is enabled |
 
 <h2>Default Config Generated</h2>
+
 ```yaml
 Who_Are_My_Teammates:
 # Is the plugin Enabled? - Accepts Bool (Def: true)
