@@ -1,4 +1,4 @@
-# WhoAreMyTeammates
+# WhoAreMyTeammates?
 <h1>Intro</h1>
 A plugin for SCP: SL that shows the specified Team a list of their teammates on spawn.
 Sends a broadcast out to the players on the team containing a list of their fellow players. For SCPs it will show a list of SCP numbers.
