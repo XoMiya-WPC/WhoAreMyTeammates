@@ -1,6 +1,5 @@
 # WhoAreMyTeammates?
-<a href="https://github.com/xomiya-wpc/awesome-github-profile-readme/stargazers"><img src="https://img.shields.io/github/stars/xomiya-wpc/awesome-github-profile-readme" alt="Stars Badge"/></a>
-<a href="https://github.com/xomiya-wpc/awesome-github-profile-readme/issues"><img src="https://img.shields.io/github/issues/xomiya-wpc/awesome-github-profile-readme" alt="Issues Badge"/></a>
+ ![visitors](https://visitor-badge.glitch.me/badge?page_id=page.id&left_color=green&right_color=red)
 
 <h1>Intro</h1>
 A plugin for SCP: SL that shows the specified Team a list of their teammates on spawn.
