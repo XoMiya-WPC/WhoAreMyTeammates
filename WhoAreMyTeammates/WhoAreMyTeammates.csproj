@@ -85,7 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="Handlers\EventHandlers.cs" />
+    <Compile Include="Handlers\EventHandler.cs" />
+    <Content Include="Handlers\ScpHandler.txt" />
+    <Content Include="Handlers\InternalSecurityHandler.txt" />
     <Compile Include="WhoAreMyTeammates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

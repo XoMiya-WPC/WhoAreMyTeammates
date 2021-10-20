@@ -43,15 +43,20 @@ namespace WhoAreMyTeammates.Handlers
             }
                            
             var players = Player.Get(wamt.Team);
-            if (players.Count() >= wamt.MaxPlayers)
+            //var MaxCap = false;
+            if (wamt.MaxPlayers != -1)
             {
-                Log.Debug($"Max Players for {wamt.Team} ({wamt.MaxPlayers}) has been exceeded! Current count: {players.Count()}. Skipping...", WhoAreMyTeammates.Instance.Config.EnableDebug);
-                return;
+                Log.Debug("Attention - Detected Upper Limit to players - Moving to compare...", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                if (players.Count() >= wamt.MaxPlayers)
+                {
+                    Log.Debug($"Max Players for {wamt.Team} ({wamt.MaxPlayers}) has been exceeded! Current count: {players.Count()}. Skipping...", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    return;
+                }
             }
                 
             if (players.Count() == 1) 
             {
-                Log.Debug("CallDelayed", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                Log.Debug("CallDelayed - Only one player is in this team.", WhoAreMyTeammates.Instance.Config.EnableDebug);
                 Timing.CallDelayed(wamt.Delay, () => players.First().Broadcast(WhoAreMyTeammates.Instance.Config.WamtBCTime, wamt.AloneContents));
                 Log.Debug($"Sent Broadcast to {players.First().Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
                 return;
@@ -68,7 +73,7 @@ namespace WhoAreMyTeammates.Handlers
                     if (name.Side == Side.Scp)
                     {
                         names += $"{ScpText[name.Role]}, ";
-                        continue; // go to the next SCP
+                        continue;
                         Log.Debug("Added SCP to names var", WhoAreMyTeammates.Instance.Config.EnableDebug);
                     }
                     names += $"{name.Nickname}, ";
