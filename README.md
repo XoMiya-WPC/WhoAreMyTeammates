@@ -12,31 +12,31 @@ This plugin **WILL NOT WORK** on previous versions
 
 | Config  | Type | Def Value |
 | ------------- | ------------- | ------------- |
-| IsEnabled  | Boolean  | true  |
-| EnableDebug  | Boolean  | false  |
-| WamtBCTime  | Integer  | 10  |
+| `is_enabled`  | Boolean  | true  |
+| `enable_debug`  | Boolean  | false  |
+| `wamt_b_c_time`  | Integer  | 10  |
 
-* **IsEnabled:** Defines if the plugin will be enabled or not. Only enter `true` or `false`.
-* **EnableDebug:** Defines if the plugin will print extra debugging messages in console. Only enter `true` or `false`.
-* **WamtBCTime:** Global time for all broadcasts. This controls how long all of the broadcasts will be. Accepts `whole numbers`.
+* **is_enabled:** Defines if the plugin will be enabled or not. Only enter `true` or `false`.
+* **enable_debug:** Defines if the plugin will print extra debugging messages in console. Only enter `true` or `false`.
+* **wamt_b_c_time:** Global time for all broadcasts. This controls how long all of the broadcasts will be. Accepts `whole numbers`.
 
 <h1>Broadcast Configs</h1>
 
 | Config  | Type | Def Value |
 | ------------- | ------------- | ------------- |
-| Team | Team | RSC, CHI, CDP, MTF, SCP |
-| Contents  | String  | See Below  |
-| AloneConents  | String  | See Below  |
-| Delay  | Integer  | 3  |
-| MaxPlayers  | Integer  | -1  |
-| Enabled  | Boolean  | true  |
+| `team` | Team | RSC, CHI, CDP, MTF, SCP |
+| `contents`  | String  | See Below  |
+| `alone_conents`  | String  | See Below  |
+| `delay`  | Integer  | 3  |
+| `max_players`  | Integer  | -1  |
+| `enabled`  | Boolean  | true  |
 
-* **Team:** Choose from a list of the Teams: `RSC` - Scientists, `CHI` - Chaos Insurgency, `CDP` - Class D, `MTF` - Facility Guards, `SCP` - SCPs. Each team will define which role see the broadcast.
-* **Contents:** This is the broadcast that will be sent to players in that team if the playercount is greater than `1`.
-* **AloneContents:** This is the broadcast that will be sent to players in that team if the playercount is less than `1`.
-* **Delay:** The delay in seconds from the round before sending the broadcast.
-* **MaxPlayers:** The maximum number of players before the broadcast will not be sent. This is to prevent spam if you have lots of Class D for example. Set to `-1` to disable the limit.
-* **Enabled:** Defines if this teams broadcast is enabled.
+* **team:** Choose from a list of the Teams: `RSC` - Scientists, `CHI` - Chaos Insurgency, `CDP` - Class D, `MTF` - Facility Guards, `SCP` - SCPs. Each team will define which role see the broadcast.
+* **contents:** This is the broadcast that will be sent to players in that team if the playercount is greater than `1`.
+* **alone_contents:** This is the broadcast that will be sent to players in that team if the playercount is less than `1`.
+* **delay:** The delay in seconds from the round before sending the broadcast.
+* **max_players:** The maximum number of players before the broadcast will not be sent. This is to prevent spam if you have lots of Class D for example. Set to `-1` to disable the limit.
+* **enabled:** Defines if this teams broadcast is enabled.
 
 
 <h2>Default Config Generated</h2>
@@ -84,7 +84,9 @@ Who_Are_My_Teammates:
 ```
 
 <h1>Info & Contact</h1>
-This plugin was requested on the Exiled Discord Server.
+This plugin was originally requested on the Exiled Discord Server.
+
+V3.0.0 was made with assistance from The Ulti One
 
 For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/DxWXw9jmXn "XoMiya's Kitchen")
 
