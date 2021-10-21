@@ -40,21 +40,21 @@ namespace WhoAreMyTeammates.Handlers
             {
                 Log.Debug("Class Broadcast Disabled - Skipping....", WhoAreMyTeammates.Instance.Config.EnableDebug);
                 return;
-            }
-                           
+            }     
             var players = Player.Get(wamt.Team);
+            int playerCount = players.Count();
             //var MaxCap = false;
             if (wamt.MaxPlayers != -1)
             {
                 Log.Debug("Attention - Detected Upper Limit to players - Moving to compare...", WhoAreMyTeammates.Instance.Config.EnableDebug);
-                if (players.Count() >= wamt.MaxPlayers)
+                if (playerCount >= wamt.MaxPlayers)
                 {
-                    Log.Debug($"Max Players for {wamt.Team} ({wamt.MaxPlayers}) has been exceeded! Current count: {players.Count()}. Skipping...", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    Log.Debug($"Max Players for {wamt.Team} ({wamt.MaxPlayers}) has been exceeded! Current count: {playerCount}. Skipping...", WhoAreMyTeammates.Instance.Config.EnableDebug);
                     return;
                 }
             }
                 
-            if (players.Count() == 1) 
+            if (playerCount == 1) 
             {
                 Log.Debug("CallDelayed - Only one player is in this team.", WhoAreMyTeammates.Instance.Config.EnableDebug);
                 Timing.CallDelayed(wamt.Delay, () => players.First().Broadcast(WhoAreMyTeammates.Instance.Config.WamtBCTime, wamt.AloneContents));
@@ -73,15 +73,16 @@ namespace WhoAreMyTeammates.Handlers
                     if (name.Side == Side.Scp)
                     {
                         names += $"{ScpText[name.Role]}, ";
-                        continue;
                         Log.Debug("Added SCP to names var", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                        continue;
+                        
                     }
                     names += $"{name.Nickname}, ";
                 }
             }
             contentsFormatted = wamt.Contents.Replace("%list%", names); 
             Log.Debug("Formated names to contentsFormatted (%list%)", WhoAreMyTeammates.Instance.Config.EnableDebug);
-            contentsFormatted = contentsFormatted.Replace("%count%", players.Count().ToString());
+            contentsFormatted = contentsFormatted.Replace("%count%", playerCount.ToString());
             Log.Debug("Formated names to contentsFormatted (%count%)", WhoAreMyTeammates.Instance.Config.EnableDebug);
             foreach (var player in players)
             {
