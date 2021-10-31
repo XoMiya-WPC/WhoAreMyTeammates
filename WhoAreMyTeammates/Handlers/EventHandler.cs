@@ -80,7 +80,7 @@ namespace WhoAreMyTeammates.Handlers
                     names += $"{name.Nickname}, ";
                 }
             }
-            names = names.Substring(0, names.Length-2);
+            if(names.Length > 2) names = names.Substring(0, names.Length-2);
             contentsFormatted = wamt.Contents.Replace("%list%", names); 
             Log.Debug("Formated names to contentsFormatted (%list%)", WhoAreMyTeammates.Instance.Config.EnableDebug);
             contentsFormatted = contentsFormatted.Replace("%count%", playerCount.ToString());
