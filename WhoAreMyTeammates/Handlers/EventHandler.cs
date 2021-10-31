@@ -68,16 +68,18 @@ namespace WhoAreMyTeammates.Handlers
             if (wamt.Contents.Contains("%list%"))
             {
                 Log.Debug("%List% Detected Running Foreach", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                int i = 0;
                 foreach (Player name in players)
                 {
+                    i++;
                     if (name.Side == Side.Scp)
                     {
-                        names += $"{ScpText[name.Role]}, ";
+                        names += (i == players.Length ? "and " : "") + $"{ScpText[name.Role]}, ";
                         Log.Debug("Added SCP to names var", WhoAreMyTeammates.Instance.Config.EnableDebug);
                         continue;
                         
                     }
-                    names += $"{name.Nickname}, ";
+                    names += (i == players.Length ? "and " : "") + $"{name.Nickname}, ";
                 }
             }
             if(names.Length > 2) names = names.Substring(0, names.Length-2);
