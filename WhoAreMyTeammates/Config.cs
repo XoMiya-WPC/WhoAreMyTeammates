@@ -13,8 +13,8 @@ namespace WhoAreMyTeammates
         [Description("Is Debugging Enabled? - Accepts Bool (Def: false)")]
         public bool EnableDebug { get; set; } = false;
 
-        [Description("Broadcast Time in Seconds - Accepts whole numbers >0 (Def: 10")]
-        public ushort WamtBCTime { get; set; } = 10;
+        [Description("Preliminary Delay Time in Seconds - Accepts whole numbers (0 will disable preliminary delay)")]
+        public float WamtPreliminaryDelayTime { get; set; } = 0;
 
         [Description("Sets broadcasts for each class. Use %list% for the player names/SCP names and %count% for number of teammates")]
         public List<WamtBroadcast> WamtBroadcasts { get; set; } = new List<WamtBroadcast>()
@@ -27,6 +27,8 @@ namespace WhoAreMyTeammates
                 AloneContents = "<color=red>Attention - You are the <b>only</b> SCP This game. Good Luck.</color>",
                 Delay = 20,
                 MaxPlayers = -1,
+                Type = 0,
+                Time = 10,
                 Enabled = true
             },
             new WamtBroadcast()
@@ -37,6 +39,8 @@ namespace WhoAreMyTeammates
                 AloneContents = "<color=grey>Attention - You are the <b>only</b> Facility Guard this game. Good Luck.</color>",
                 Delay = 3,
                 MaxPlayers = -1,
+                Type = 0,
+                Time = 10,
                 Enabled = true
             },
             new WamtBroadcast()
@@ -47,6 +51,8 @@ namespace WhoAreMyTeammates
                 AloneContents = "<color=yellow>Attention - You are the <b>only</b> Scientist this game. Good Luck.</color>",
                 Delay = 3,
                 MaxPlayers = -1,
+                Type = 0,
+                Time = 10,
                 Enabled = true
             },
             new WamtBroadcast()
@@ -57,6 +63,8 @@ namespace WhoAreMyTeammates
                 AloneContents = "<color=orange>Attention - You are the <b>only</b> Class D Personnel this game. Good Luck.</color>",
                 Delay = 3,
                 MaxPlayers = -1,
+                Type = 0,
+                Time = 10,
                 Enabled = true
             },
             new WamtBroadcast()
@@ -67,6 +75,8 @@ namespace WhoAreMyTeammates
                 AloneContents = "<color=green>Attention - You are the <b>only</b> Insurgent this game. Good Luck.</color>",
                 Delay = 3,
                 MaxPlayers = -1,
+                Type = 0,
+                Time = 10,
                 Enabled = true
             }
         };
@@ -79,6 +89,8 @@ namespace WhoAreMyTeammates
         public string AloneContents { get; set; }
         public int Delay { get; set; } = 3;
         public int MaxPlayers { get; set; } = -1;
+        public int Type { get; set; } = 0;
+        public ushort Time { get; set; } = 10;
         public bool Enabled { get; set; } = true;
     }
 }

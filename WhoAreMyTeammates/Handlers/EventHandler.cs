@@ -24,14 +24,22 @@ namespace WhoAreMyTeammates.Handlers
 
         public void OnRoundStarted()
         {
-            Timing.CallDelayed(0.5f, () =>
+            float PDelay = 0.5f;
+            if (WhoAreMyTeammates.Instance.Config.WamtPreliminaryDelayTime != 0)
+            {
+                PDelay += WhoAreMyTeammates.Instance.Config.WamtPreliminaryDelayTime;
+                Log.Debug($"WamtPreliminaryDelayTime is {WhoAreMyTeammates.Instance.Config.WamtPreliminaryDelayTime}, holding count for {PDelay} seconds...", WhoAreMyTeammates.Instance.Config.EnableDebug);
+            }
+            Timing.CallDelayed(PDelay, () =>
             {
                 foreach (WamtBroadcast wamtBroadcast in WhoAreMyTeammates.Instance.Config.WamtBroadcasts)
                 {
                     ShowBroadcast(wamtBroadcast);
                     Log.Debug("Called ShowBroadcast", WhoAreMyTeammates.Instance.Config.EnableDebug);
                 }
+                    
             });
+
         }
 
         public void ShowBroadcast(WamtBroadcast wamt)
@@ -40,7 +48,9 @@ namespace WhoAreMyTeammates.Handlers
             {
                 Log.Debug("Class Broadcast Disabled - Skipping....", WhoAreMyTeammates.Instance.Config.EnableDebug);
                 return;
+
             }     
+        
             var players = Player.Get(wamt.Team);
             int playerCount = players.Count();
             //var MaxCap = false;
@@ -56,10 +66,29 @@ namespace WhoAreMyTeammates.Handlers
                 
             if (playerCount == 1) 
             {
-                Log.Debug("CallDelayed - Only one player is in this team.", WhoAreMyTeammates.Instance.Config.EnableDebug);
-                Timing.CallDelayed(wamt.Delay, () => players.First().Broadcast(WhoAreMyTeammates.Instance.Config.WamtBCTime, wamt.AloneContents));
-                Log.Debug($"Sent Broadcast to {players.First().Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
-                return;
+                if (wamt.Type == 0)
+                {
+                    Log.Debug("CallDelayed - Only one player is in this team.", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    Timing.CallDelayed(wamt.Delay, () => players.First().Broadcast(wamt.Time, wamt.AloneContents));
+                    Log.Debug($"Sent Broadcast to {players.First().Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    return;
+                }
+                else if (wamt.Type == 1)
+                {
+                    Log.Debug("CallDelayed - Only one player is in this team.", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    Timing.CallDelayed(wamt.Delay, () => players.First().ShowHint(wamt.AloneContents, wamt.Time));
+                    Log.Debug($"Sent Hint to {players.First().Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    return;
+                  
+                }
+                else if (wamt.Type == 2)
+                {
+                    Log.Debug("CallDelayed - Only one player is in this team.", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    Timing.CallDelayed(wamt.Delay, () => players.First().SendConsoleMessage(wamt.AloneContents, "cyan"));
+                    Log.Debug($"Sent Console Broadcast to {players.First().Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                    return;
+                    
+                }
             }
 
             string names = string.Empty;
@@ -78,21 +107,42 @@ namespace WhoAreMyTeammates.Handlers
                         names += (i == playersCount ? "and " : "") + $"{ScpText[name.Role]}, ";
                         Log.Debug("Added SCP to names var", WhoAreMyTeammates.Instance.Config.EnableDebug);
                         continue;
-                        
+
                     }
                     names += (i == playersCount ? "and " : "") + $"{name.Nickname}, ";
                 }
             }
-            if(names.Length > 2) names = names.Substring(0, names.Length-2);
+            if (names.Length > 2) names = names.Substring(0, names.Length - 2);
             contentsFormatted = wamt.Contents.Replace("%list%", names); 
             Log.Debug("Formated names to contentsFormatted (%list%)", WhoAreMyTeammates.Instance.Config.EnableDebug);
             contentsFormatted = contentsFormatted.Replace("%count%", playerCount.ToString());
             Log.Debug("Formated names to contentsFormatted (%count%)", WhoAreMyTeammates.Instance.Config.EnableDebug);
-            foreach (var player in players)
+            if (wamt.Type == 0)
             {
-                Timing.CallDelayed(wamt.Delay, () => player.Broadcast(WhoAreMyTeammates.Instance.Config.WamtBCTime, contentsFormatted));
-                Log.Debug($"Sending Broadcast to {player.Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                foreach (var player in players)
+                {
+                    Timing.CallDelayed(wamt.Delay, () => player.Broadcast(wamt.Time, contentsFormatted));
+                    Log.Debug($"Sending Broadcast to {player.Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+
+                }
             } 
+            else if (wamt.Type == 1)
+            {
+                foreach (var player in players)
+                {
+                    Timing.CallDelayed(wamt.Delay, () => player.ShowHint(contentsFormatted, wamt.Time));
+                    Log.Debug($"Sending Hint to {player.Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                }
+
+            }
+            else if (wamt.Type == 2)
+            {
+                foreach (var player in players)
+                {
+                    Timing.CallDelayed(wamt.Delay, () => player.SendConsoleMessage(contentsFormatted, "cyan"));
+                    Log.Debug($"Sending Console Broadcast to {player.Nickname}", WhoAreMyTeammates.Instance.Config.EnableDebug);
+                }
+            }
         }
     }
 }
