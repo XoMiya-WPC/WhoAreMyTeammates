@@ -38,7 +38,7 @@ This plugin **WILL NOT WORK** on previous versions
 * **alone_contents:** This is the message that will be sent to players in that team if the playercount is less than `1`.
 * **delay:** The delay in seconds from the round before sending the message once the information has been calculated. 
 * **max_players:** The maximum number of players before the message will not be sent. This is to prevent spam if you have lots of Class D for example. Set to `-1` to disable the limit.
-* **type:** The type of message that will be sent. 0 = standard Broadcast, 1 = hint, 2 = console message.
+* **type:** The type of message that will be sent. `0` = standard Broadcast, `1` = hint, `2` = console message.
 * **time:** The time the message will last for. Does not apply to `type: 2`
 * **enabled:** Defines if this teams message is enabled.
 
