@@ -30,7 +30,7 @@ This plugin **WILL NOT WORK** on previous versions
 | `delay`  | Integer  | 3  |
 | `max_players`  | Integer  | -1  |
 | `type`  | Integer  | 0  |
-| `time`  | Ushort  | 10  |
+| `time`  | Float  | 10  |
 | `enabled`  | Boolean  | true  |
 
 * **team:** Choose from a list of the Teams: `RSC` - Scientists, `CHI` - Chaos Insurgency, `CDP` - Class D, `MTF` - Facility Guards, `SCP` - SCPs. Each team will define which role see the broadcast.
