@@ -14,7 +14,7 @@ This plugin **WILL NOT WORK** on previous versions
 | ------------- | ------------- | ------------- |
 | `is_enabled`  | Boolean  | true  |
 | `enable_debug`  | Boolean  | false  |
-| `wamt_preliminary_delay_time`  | Integer  | 10  |
+| `wamt_preliminary_delay_time`  | Float  | 10  |
 
 * **is_enabled:** Defines if the plugin will be enabled or not. Only enter `true` or `false`.
 * **enable_debug:** Defines if the plugin will print extra debugging messages in console. Only enter `true` or `false`.
