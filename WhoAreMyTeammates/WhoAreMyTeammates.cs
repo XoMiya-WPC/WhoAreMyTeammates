@@ -12,7 +12,7 @@ namespace WhoAreMyTeammates
         public override string Name { get; } = "WhoAreMyTeamates?";
         public override string Author { get; } = "XoMiya-WPC & TheUltiOne";
         public override string Prefix { get; } = "Who_Are_My_Teammates";
-        public override Version Version { get; } = new Version("3.2.0");
+        public override Version Version { get; } = new Version("3.2.1");
 
         public static WhoAreMyTeammates Instance;
 
@@ -22,7 +22,7 @@ namespace WhoAreMyTeammates
         {
             events = new EventHandlers();
             Server.RoundStarted += events.OnRoundStarted;
-            Log.Info("Thanks for installing Who Are My Teammates :)");
+            Log.Info("Thanks for installing WhoAreMyTeammates? :)");
             Instance = this;
             base.OnEnabled();
         }
