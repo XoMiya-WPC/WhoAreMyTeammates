@@ -28,6 +28,9 @@ namespace WhoAreMyTeammates
         public override string Prefix { get; } = "WhoAreMyTeammates";
 
         /// <inheritdoc />
+        public override Version RequiredExiledVersion { get; } = new Version(4, 1, 2);
+
+        /// <inheritdoc />
         public override Version Version { get; } = new Version(4, 0, 0);
 
         /// <inheritdoc />
