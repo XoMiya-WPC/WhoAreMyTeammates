@@ -6,19 +6,17 @@ Sends a broadcast out to the players on the team containing a list of their fell
 
 <h1>Requirements</h1>
 
-This plugin requires [EXILED](https://github.com/Exiled-Team/EXILED/releases "Exiled Releases") `4.2.0`
+This plugin requires [EXILED](https://github.com/Exiled-Team/EXILED/releases "Exiled Releases") `4.2.3`
 This plugin **WILL NOT WORK** on previous versions
 <h1>General Config</h1>
 
 | Config  | Type | Def Value |
 | ------------- | ------------- | ------------- |
 | `is_enabled`  | Boolean  | true  |
-| `enable_debug`  | Boolean  | false  |
-| `wamt_preliminary_delay_time`  | Float  | 10  |
+| `delay_time`  | Float  | 0  |
 
 * **is_enabled:** Defines if the plugin will be enabled or not. Only enter `true` or `false`.
-* **enable_debug:** Defines if the plugin will print extra debugging messages in console. Only enter `true` or `false`.
-* **wamt_preliminary_delay_time:** Global preliminary time to hold the plugin for. This controls how long the plugin will hold its calculations for. Most prominant uses are allowing other plugins to change classes at the beginning of the game. Accepts `whole numbers`.
+* **delay_time:** Global preliminary time to hold the plugin for. This controls how long the plugin will hold its calculations for. Most prominant uses are allowing other plugins to change classes at the beginning of the game. Accepts `whole numbers`.
 
 <h1>Broadcast Configs</h1>
 
@@ -49,10 +47,8 @@ This plugin **WILL NOT WORK** on previous versions
 Who_Are_My_Teammates:
 # Is the plugin Enabled? - Accepts Bool (Def: true)
   is_enabled: true
-  # Is Debugging Enabled? - Accepts Bool (Def: false)
-  enable_debug: false
   # Preliminary Delay Time in Seconds - Accepts whole numbers (0 will disable preliminary delay)
-  wamt_preliminary_delay_time: 0
+  delay_time: 0
   # Sets broadcasts for each class. Use %list% for the player names/SCP names and %count% for number of teammates
   wamt_broadcasts:
   - team: SCP
