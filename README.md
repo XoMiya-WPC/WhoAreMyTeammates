@@ -6,7 +6,7 @@ Sends a broadcast out to the players on the team containing a list of their fell
 
 <h1>Requirements</h1>
 
-This plugin requires [EXILED](https://github.com/Exiled-Team/EXILED/releases "Exiled Releases") `3.0.0`
+This plugin requires [EXILED](https://github.com/Exiled-Team/EXILED/releases "Exiled Releases") `4.2.0`
 This plugin **WILL NOT WORK** on previous versions
 <h1>General Config</h1>
 
