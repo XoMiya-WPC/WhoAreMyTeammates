@@ -31,14 +31,12 @@ namespace WhoAreMyTeammates
         public override Version RequiredExiledVersion { get; } = new Version(4, 2, 3);
 
         /// <inheritdoc />
-        public override Version Version { get; } = new Version(4, 0, 1);
+        public override Version Version { get; } = new Version(4, 0, 2);
 
         /// <inheritdoc />
         public override void OnEnabled()
         {
-            Log.Info("Registering Event Handler...");
             eventHandlers = new EventHandlers(this);
-            Log.Info("Registering Events...");
             Server.RoundStarted += eventHandlers.OnRoundStarted;
             base.OnEnabled();
         }
