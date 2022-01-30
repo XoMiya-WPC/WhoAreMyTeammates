@@ -96,7 +96,7 @@ Who_Are_My_Teammates:
 <h1>Info & Contact</h1>
 This plugin was originally requested on the Exiled Discord Server.
 
-V3.0.0 was made with assistance from The Ulti One
+This plugin was made with love by @TheUltiOne & Myself
 
 For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/DxWXw9jmXn "XoMiya's Kitchen")
 
