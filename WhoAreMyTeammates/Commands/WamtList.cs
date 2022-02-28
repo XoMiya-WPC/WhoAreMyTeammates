@@ -21,7 +21,7 @@
         public string Command { get; } = "WamtList";
 
         /// <inheritdoc/>
-        public string[] Aliases { get; } = { "WL", "ListSCPs" };
+        public string[] Aliases { get; } = { "WL", "SCPList", "ListSCPs" };
 
         /// <inheritdoc/>
         public string Description { get; } = "Lists SCPs in the current round";
