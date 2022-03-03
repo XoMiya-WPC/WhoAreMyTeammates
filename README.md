@@ -42,6 +42,16 @@ This plugin **WILL NOT WORK** on previous versions
 * **enabled:** Defines if this teams message is enabled.
 
 
+
+<h1>Info & Contact</h1>
+This plugin was originally requested on the Exiled Discord Server.
+
+This plugin was made with love by @TheUltiOne & Myself
+
+For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/js4W9M5Csq "XoMiya's Kitchen")
+
+![img](https://img.shields.io/github/downloads/XoMiya-WPC/WhoAreMyTeammates/total?style=for-the-badge)
+
 <h2>Default Config Generated</h2>
 
 ```yaml
@@ -94,11 +104,3 @@ Who_Are_My_Teammates:
     enabled: true
 ```
 
-<h1>Info & Contact</h1>
-This plugin was originally requested on the Exiled Discord Server.
-
-This plugin was made with love by @TheUltiOne & Myself
-
-For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/js4W9M5Csq "XoMiya's Kitchen")
-
-![img](https://img.shields.io/github/downloads/XoMiya-WPC/WhoAreMyTeammates/total?style=for-the-badge)
