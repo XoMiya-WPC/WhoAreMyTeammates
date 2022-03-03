@@ -99,6 +99,6 @@ This plugin was originally requested on the Exiled Discord Server.
 
 This plugin was made with love by @TheUltiOne & Myself
 
-For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/DxWXw9jmXn "XoMiya's Kitchen")
+For help or issues Contact me on Discord @ XoMiya#6113 or join my [discord](https://discord.gg/js4W9M5Csq "XoMiya's Kitchen")
 
 ![img](https://img.shields.io/github/downloads/XoMiya-WPC/WhoAreMyTeammates/total?style=for-the-badge)
