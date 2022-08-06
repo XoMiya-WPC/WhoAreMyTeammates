@@ -25,6 +25,12 @@ namespace WhoAreMyTeammates
         public float DelayTime { get; set; } = 0;
 
         /// <summary>
+        /// Decides if players will recieve a WAMT broadcast on class change similar to start of round.
+        /// </summary>
+        [Description("Will players recieve a broadcast upon class change?")]
+        public bool AlertClassChange = false;
+
+        /// <summary>
         /// Gets or sets a collection of all the broadcasts to display.
         /// </summary>
         [Description("Sets broadcasts for each class. Use %list% for the player names/SCP names and %count% for number of teammates")]

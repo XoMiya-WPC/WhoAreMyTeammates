@@ -1,16 +1,11 @@
 ﻿namespace WhoAreMyTeammates.Commands
 {
+    using CommandSystem;
+    using Exiled.API.Features;
+    using RemoteAdmin;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using CommandSystem;
-    using Exiled.API.Features;
-    using Exiled.Permissions.Extensions;
-    using Mirror;
-    using NorthwoodLib.Pools;
-    using RemoteAdmin;
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
     [CommandHandler(typeof(GameConsoleCommandHandler))]
@@ -42,12 +37,11 @@
                 var scpNames = new List<string>();
                 foreach (var scp in scps)
                 {
-                    scpNames.Add(scp.ReferenceHub.characterClassManager.CurRole.fullName);                  
+                    scpNames.Add(scp.ReferenceHub.characterClassManager.CurRole.fullName);
                     if (scp != scps.Last())
                         scpNames.Append(", ");
                     else
                         scpNames.Append(".");
-
                 }
                 string NameString = String.Join(",", scpNames);
                 Player.Get(sender).Broadcast(10, $"<color=red>The Following SCPs are ingame: {NameString}</color>");

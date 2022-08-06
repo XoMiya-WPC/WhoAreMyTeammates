@@ -11,6 +11,7 @@ namespace WhoAreMyTeammates
     using System.Linq;
     using System.Text;
     using Exiled.API.Features;
+    using Exiled.Events.EventArgs;
     using MEC;
     using NorthwoodLib.Pools;
     using WhoAreMyTeammates.Models;
@@ -35,6 +36,12 @@ namespace WhoAreMyTeammates
                 foreach (WamtBroadcast broadcast in plugin.Config.WamtBroadcasts)
                     RunBroadcast(broadcast);
             });
+        }
+        public void OnChangingRole(ChangingRoleEventArgs ev)
+        {
+            Player ourPlayer = ev.Player;
+            var ourPlayerTeam = ev.Player.Role;
+
         }
 
         private void RunBroadcast(WamtBroadcast broadcast)

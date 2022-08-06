@@ -9,7 +9,9 @@ namespace WhoAreMyTeammates
 {
     using System;
     using Exiled.API.Features;
+    using Player = Exiled.Events.Handlers.Player;
     using Server = Exiled.Events.Handlers.Server;
+    
 
     /// <summary>
     /// The main plugin class.
@@ -19,7 +21,7 @@ namespace WhoAreMyTeammates
         private EventHandlers eventHandlers;
 
         /// <inheritdoc />
-        public override string Author { get; } = "XoMiya-WPC & TheUltiOne";
+        public override string Author { get; } = "XoMiya-WPC & TheUltiOne & Build";
 
         /// <inheritdoc />
         public override string Name { get; } = "WhoAreMyTeammates";
@@ -31,12 +33,13 @@ namespace WhoAreMyTeammates
         public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
 
         /// <inheritdoc />
-        public override Version Version { get; } = new Version(4, 1, 0);
+        public override Version Version { get; } = new Version(4, 2, 0);
 
         /// <inheritdoc />
         public override void OnEnabled()
         {
             eventHandlers = new EventHandlers(this);
+            Player.ChangingRole += eventHandlers.OnChangingRole;
             Server.RoundStarted += eventHandlers.OnRoundStarted;
             base.OnEnabled();
         }
@@ -44,7 +47,9 @@ namespace WhoAreMyTeammates
         /// <inheritdoc />
         public override void OnDisabled()
         {
+            Player.ChangingRole -= eventHandlers.OnChangingRole;
             Server.RoundStarted -= eventHandlers.OnRoundStarted;
+            
             eventHandlers = null;
 
             base.OnDisabled();
