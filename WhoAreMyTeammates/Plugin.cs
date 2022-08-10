@@ -20,7 +20,7 @@ namespace WhoAreMyTeammates
         private EventHandlers eventHandlers;
 
         /// <inheritdoc />
-        public override string Author { get; } = "XoMiya-WPC & TheUltiOne & Build";
+        public override string Author { get; } = "XoMiya-WPC, TheUltiOne & Build";
 
         /// <inheritdoc />
         public override string Name { get; } = "WhoAreMyTeammates";
@@ -29,7 +29,7 @@ namespace WhoAreMyTeammates
         public override string Prefix { get; } = "WhoAreMyTeammates";
 
         /// <inheritdoc />
-        public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(5, 3, 0);
 
         /// <inheritdoc />
         public override Version Version { get; } = new Version(4, 2, 0);

@@ -4,12 +4,13 @@
     <AssemblyName>WhoAreMyTeammates</AssemblyName>
     <TargetFramework>net472</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Authors>XoMiya-WPC &amp; Build</Authors>
+    <Authors>XoMiya-WPC, The Ulti One &amp; Build</Authors>
     <Version>4.2.0</Version>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <Company>XoMiya-WPC</Company>
   </PropertyGroup>
 
   <ItemGroup>
