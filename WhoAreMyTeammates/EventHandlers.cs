@@ -37,11 +37,37 @@ namespace WhoAreMyTeammates
                     RunBroadcast(broadcast);
             });
         }
+
         public void OnChangingRole(ChangingRoleEventArgs ev)
         {
-            Player ourPlayer = ev.Player;
-            var ourPlayerTeam = ev.Player.Role;
+            var CREV = ev;
+            Timing.CallDelayed(1f, () =>
+            {
+                foreach (WamtBroadcast broadcast in plugin.Config.WamtBroadcasts)
+                {
+                    List<Player> players = Player.Get(broadcast.Team).ToList();
+                    if (broadcast.ClassChangeIsEnabled)
+                    {
+                        if (players.Contains(ev.Player))
+                            ChangeRoleBc(CREV, broadcast);
+                    }
+                }
+            });
+        }
 
+        private void ChangeRoleBc(ChangingRoleEventArgs CREV, WamtBroadcast broadcast)
+        {
+            List<Player> players = Player.Get(broadcast.Team).ToList();
+            if (broadcast.MaxPlayers > -1 && players.Count >= broadcast.MaxPlayers)
+                return;
+            if (players.Count == 1)
+            {
+                DisplayBroadcast(players[0], broadcast.AloneContents, broadcast.Time, broadcast.Type);
+                return;
+            }
+            string contentsFormatted = broadcast.ChangeClassContents.Replace("%list%", GeneratePlayerList(players, broadcast));
+            contentsFormatted = contentsFormatted.Replace("%count%", players.Count.ToString());
+            DisplayBroadcast(CREV.Player, contentsFormatted, broadcast.Time, broadcast.Type);
         }
 
         private void RunBroadcast(WamtBroadcast broadcast)
@@ -94,7 +120,7 @@ namespace WhoAreMyTeammates
 
                 stringBuilder.Append(' ').Append(player.Nickname);
                 if (player.IsScp)
-                    stringBuilder.Append(' ').Append(player.ReferenceHub.characterClassManager.CurRole.fullName);
+                    stringBuilder.Append(' ').Append('(').Append(player.ReferenceHub.characterClassManager.CurRole.fullName).Append(')');
 
                 if (i != cutOff)
                     stringBuilder.Append(", ");

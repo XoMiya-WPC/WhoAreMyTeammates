@@ -11,7 +11,6 @@ namespace WhoAreMyTeammates
     using Exiled.API.Features;
     using Player = Exiled.Events.Handlers.Player;
     using Server = Exiled.Events.Handlers.Server;
-    
 
     /// <summary>
     /// The main plugin class.
@@ -49,7 +48,6 @@ namespace WhoAreMyTeammates
         {
             Player.ChangingRole -= eventHandlers.OnChangingRole;
             Server.RoundStarted -= eventHandlers.OnRoundStarted;
-            
             eventHandlers = null;
 
             base.OnDisabled();

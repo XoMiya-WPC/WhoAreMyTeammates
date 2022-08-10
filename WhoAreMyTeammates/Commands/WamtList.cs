@@ -24,7 +24,6 @@
         /// <inheritdoc/>
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-
             if (sender is PlayerCommandSender playerSender)
             {
                 if (!playerSender.CharacterClassManager.IsAnyScp())
@@ -43,6 +42,7 @@
                     else
                         scpNames.Append(".");
                 }
+
                 string NameString = String.Join(",", scpNames);
                 Player.Get(sender).Broadcast(10, $"<color=red>The Following SCPs are ingame: {NameString}</color>");
                 response = $"The Following SCPs are ingame: {NameString}";
